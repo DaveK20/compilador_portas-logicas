@@ -1,0 +1,24 @@
+GATE{
+IN: input1, input2;
+OUT:out;
+
+# if a & b == 1 
+# out = 1
+# else 
+# out = 0
+
+CIRCUIT And(a=ina, b=inb, out=outand){
+    Nand(a=ina, b=inb, out=outab);
+    Nand(a=outab, b=outab, out=outand);
+}
+
+CIRCUIT Or(a=ina, b=inb, out=outor){
+    Nand(a=ina, b=ina, out=outa);
+    Nand(a=inb, b=inb, out=outb);
+    Nand(a=outa, b=outb, out=outor);
+}
+
+PARTS:
+    And(a=input1, b=input2, out=out12);
+    Or(a=out12, b=out12, out=out);
+}

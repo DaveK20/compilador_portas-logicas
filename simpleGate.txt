@@ -1,0 +1,11 @@
+GATE {
+    IN: in1, in2;
+    OUT: out;
+
+    PARTS:
+    Nand(a=in1, b=in1, out=out1);
+    Nand(a=out1, b=out1, out=aaa);
+    Nand(a=out1, b=bbb, out=aa);
+
+    Nand(a=aaa, b=out3, out=out);
+}

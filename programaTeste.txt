@@ -1,0 +1,7 @@
+CRIAR_FICHA {
+    IMAGEM: paladino.png
+    NOME: "Misericordia"
+    RACA: Elfo
+    CLASSE: Mago
+    LVL: 10
+}
